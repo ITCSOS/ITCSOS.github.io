@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>搭建博客的心酸 | 觅知の博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="hexo部署到centos服务器环境搭建过程本文介绍将hexo部署到腾讯云的centos服务器上，同时也教大家如何避免踩坑，请大家耐心往下看。准备一台centos云服务器。 搭建本地hexo服务因为这一块内容配置很简单，看着相关教程傻瓜式复制粘贴即可，在这里就不再多说了。  登录centos云服务器这里采用ssh远程登录 打开终端输入以下命令 1ssh username@your_server_i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建博客的心酸">
+<meta property="og:url" content="http://example.com/2022/02/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BF%83%E9%85%B8/index.html">
+<meta property="og:site_name" content="觅知の博客">
+<meta property="og:description" content="hexo部署到centos服务器环境搭建过程本文介绍将hexo部署到腾讯云的centos服务器上，同时也教大家如何避免踩坑，请大家耐心往下看。准备一台centos云服务器。 搭建本地hexo服务因为这一块内容配置很简单，看着相关教程傻瓜式复制粘贴即可，在这里就不再多说了。  登录centos云服务器这里采用ssh远程登录 打开终端输入以下命令 1ssh username@your_server_i">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/bnkhfBmsu1Z7rEd.png">
+<meta property="article:published_time" content="2022-02-15T02:56:37.000Z">
+<meta property="article:modified_time" content="2022-02-22T08:22:29.521Z">
+<meta property="article:author" content="觅知">
+<meta property="article:tag" content="博客搭建">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/28/bnkhfBmsu1Z7rEd.png">
+  
+    <link rel="alternative" href="/atom.xml" title="觅知の博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://scimg.jianbihuadq.com/touxiang/202003/20200326123253119.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://scimg.jianbihuadq.com/touxiang/202003/20200326123253119.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/%E5%89%AF%E4%B8%9A%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">副业之路</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15px;">博客搭建</a> <a href="/tags/%E6%8B%9B%E8%81%98/" style="font-size: 15px;">招聘</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">计算机基础知识</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95/" style="font-size: 10px;">计算机等级考试</a> <a href="/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 10px;">面经</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 15px;">项目</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://scimg.jianbihuadq.com/touxiang/202003/20200326123253119.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-博客搭建/搭建博客的心酸" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/02/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BF%83%E9%85%B8/" class="article-date">
+  	<time datetime="2022-02-15T02:56:37.000Z" itemprop="datePublished">2022-02-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      搭建博客的心酸
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hexo部署到centos服务器环境搭建过程"><a href="#hexo部署到centos服务器环境搭建过程" class="headerlink" title="hexo部署到centos服务器环境搭建过程"></a>hexo部署到centos服务器环境搭建过程</h1><h2 id="本文介绍将hexo部署到腾讯云的centos服务器上，同时也教大家如何避免踩坑，请大家耐心往下看。"><a href="#本文介绍将hexo部署到腾讯云的centos服务器上，同时也教大家如何避免踩坑，请大家耐心往下看。" class="headerlink" title="本文介绍将hexo部署到腾讯云的centos服务器上，同时也教大家如何避免踩坑，请大家耐心往下看。"></a>本文介绍将hexo部署到腾讯云的centos服务器上，同时也教大家如何避免踩坑，请大家耐心往下看。</h2><p><em>准备一台centos云服务器。</em></p>
+<h2 id="搭建本地hexo服务"><a href="#搭建本地hexo服务" class="headerlink" title="搭建本地hexo服务"></a>搭建本地hexo服务</h2><p>因为这一块内容配置很简单，看着相关教程傻瓜式复制粘贴即可，在这里就不再多说了。</p>
+<hr>
+<h2 id="登录centos云服务器"><a href="#登录centos云服务器" class="headerlink" title="登录centos云服务器"></a>登录centos云服务器</h2><p><em>这里采用ssh远程登录</em></p>
+<p>打开终端输入以下命令</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@your_server_ip</span><br></pre></td></tr></table></figure>
+
+<p><em>然后输入你的用户密码按下回车键就可以登进去了</em></p>
+<p>这里是以默认端口号22进行访问，如果你的端口号改动了则可以加上 <em>-p</em> 参数。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span> username<span class="variable">@your_server_ip</span> -p 端口号</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安装并配置nginx环境"><a href="#安装并配置nginx环境" class="headerlink" title="安装并配置nginx环境"></a>安装并配置nginx环境</h2><ul>
+<li><em>ssh 登录到服务器然后下载nginx</em></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum install -y nginx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>启动nginx并设置开机自启</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service nginx start</span><br><span class="line">systemctl enable nginx</span><br></pre></td></tr></table></figure>
+
+<p>至此，<em>现在浏览器输入外网地址就可以看到欢迎界面了</em></p>
+<img src="https://i.loli.net/2020/01/28/bnkhfBmsu1Z7rEd.png" alt="查看源图像" style="zoom: 80%;">
+
+<ul>
+<li><strong>配置nginx环境</strong></li>
+</ul>
+<p>*这里主要配置域名以及网站根目录，如果没有域名则可以暂时不配置，等购买域名并完成域名备案域名解析后再做配置,我是没有配置域名，太贵了，耗不起，哈哈</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p><em>以下列出主要配置:</em></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen  <span class="number">80</span>;</span><br><span class="line">    server_name     example.com; #改为自己的域名</span><br><span class="line">    root            /usr/share/nginx/blog; #改为自己博客的目录</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><em>新建刚刚改的博客目录:</em></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/share/nginx/blog</span><br></pre></td></tr></table></figure>
+
+<p>nginx配置到这里就基本安装Node.js啦。</p>
+<hr>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><ul>
+<li><strong>下载Nodejs</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v10<span class="number">.5</span><span class="number">.0</span>/node-v10<span class="number">.5</span><span class="number">.0</span>-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>解压Node.js</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvJf node-v10<span class="number">.5</span><span class="number">.0</span>-linux-x64.tar.xz</span><br><span class="line">mv node-v10<span class="number">.5</span><span class="number">.0</span>-linux-x64 node</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>配置环境变量</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv node/ /usr/<span class="keyword">local</span>/</span><br><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+<p><em>增加以下内容:</em></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export NODE_HOME=/usr/<span class="keyword">local</span>/node      #这里是node路径</span><br><span class="line">export PATH=$NODE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>更新配置</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.profile</span><br></pre></td></tr></table></figure>
+
+<p><em>测试是否配置正确</em></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<p>到这里，我们的Node.js也配置好了</p>
+<hr>
+<h2 id="安装Git并进行配置"><a href="#安装Git并进行配置" class="headerlink" title="安装Git并进行配置"></a>安装Git并进行配置</h2><ul>
+<li><strong>安装Git</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>创建git用户并为其设置密码</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser git #创建用户</span><br><span class="line">passwd git  #设置密码</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>切换至git用户，添加SSH Key，</strong></li>
+</ul>
+<p><em>在客户端执行并查看并复制客户端的SSH Keys，将内容复制下，后边要用！！！</em></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>在服务器端执行：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su git  #切换用户</span><br><span class="line">mkdir ~/.ssh    #创建目录</span><br><span class="line">vim ~/.ssh/authorized_keys  #将刚刚复制的内容写进去 </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>为刚刚的文件和目录设置权限</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">600</span> ~/.ssh/authorized_keys</span><br><span class="line">chmod <span class="number">700</span> ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>在客户端测试是否能连接服务器</strong></li>
+</ul>
+<p><em>终端输入以下命令，如果成功登录则配置成功。</em></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -v git@your_server_ip #注意更换成自己的服务器ip</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>将博客发布目录的属主属组改为git</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R git:git /usr/share/nginx/blog</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>初始化Git仓库</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su git</span><br><span class="line">cd ~</span><br><span class="line">git init <span class="comment">--bare blog.git    #使用--bare参数，Git就会创建一个空裸库。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>配置git hooks</strong></li>
+</ul>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+
+<p><em>在post-receive中写入以下内容:</em></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">git <span class="comment">--work-tree=/usr/share/nginx/blog --git-dir=/home/git/blog.git checkout -f</span></span><br></pre></td></tr></table></figure>
+
+<p>赋予其执行权限</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ~/blog.git/hooks/post-rceive</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置博客根目录的主配置文件"><a href="#配置博客根目录的主配置文件" class="headerlink" title="配置博客根目录的主配置文件"></a>配置博客根目录的主配置文件</h2><p>手动编辑博客根目录下的_config.yml</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@your_server_ip:/home/git/blog.git #注意改成自己的服务器ip</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>在博客主目录执行以下命令：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>部署完成后就可以在浏览器输入你的域名访问我们的博客了。</p>
+<h1 id="坑总结："><a href="#坑总结：" class="headerlink" title="坑总结："></a>坑总结：</h1><h3 id="1-x11-forwarding-disabled解决办法："><a href="#1-x11-forwarding-disabled解决办法：" class="headerlink" title="1. x11-forwarding disabled解决办法："></a>1. x11-forwarding disabled解决办法：</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35061334/article/details/102575507">(37条消息) x11-forwarding disabled解决办法_3L_csdn的博客-CSDN博客</a></p>
+<h3 id="2-Add-correct-host-key-in-CUsersxxx-sshknown-hosts-to-get-rid-of-this-message"><a href="#2-Add-correct-host-key-in-CUsersxxx-sshknown-hosts-to-get-rid-of-this-message" class="headerlink" title="2.  Add correct host key in CUsersxxx.sshknown_hosts to get rid of this message"></a>2.  Add correct host key in CUsersxxx.sshknown_hosts to get rid of this message</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26552691/article/details/116270842">(37条消息) Add correct host key in C:\Users\xxx&#x2F;.ssh&#x2F;known_hosts to get rid of this message._奔三的Uncle-CSDN博客</a></p>
+<p>如果上边的操作不行，就去清空后本地文件<code>C:\Users\Administrator\.ssh</code>下的known_hosts文件，这下问题就可以完美解决。</p>
+<h3 id="3-ssh登录错误ECDSA-host-key-for-ip-has-changed解决方案"><a href="#3-ssh登录错误ECDSA-host-key-for-ip-has-changed解决方案" class="headerlink" title="3. ssh登录错误ECDSA host key for ip has changed解决方案"></a>3. ssh登录错误ECDSA host key for ip has changed解决方案</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e30486c20cf5">ssh登录错误ECDSA host key for ip has changed解决方案 - 简书 (jianshu.com)</a></p>
+<h3 id="4-重启centOS丢失nginx-pid导致无法启动nginx的解决方法"><a href="#4-重启centOS丢失nginx-pid导致无法启动nginx的解决方法" class="headerlink" title="4.  重启centOS丢失nginx.pid导致无法启动nginx的解决方法"></a>4.  重启centOS丢失nginx.pid导致无法启动nginx的解决方法</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30888707/article/details/97296313">(37条消息) 重启centOS丢失nginx.pid导致无法启动nginx的解决方法_weixin_30888707的博客-CSDN博客</a></p>
+<p>至此，我的博客就彻底搭建完成了，有种哭的欲望，哈哈！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/19/%E9%A1%B9%E7%9B%AE/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B9%8B%E5%9C%B0%E5%BD%A2%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          人工智能之地形导航系统项目
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="博客搭建/搭建博客的心酸" data-title="搭建博客的心酸" data-url="http://example.com/2022/02/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BF%83%E9%85%B8/"  data-images="http://scimg.jianbihuadq.com/touxiang/202003/20200326123253119.jpg" data-content="搭建博客的心酸">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 觅知
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">杨国强</a>的<a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">个人博客</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
