@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/%E5%89%AF%E4%B8%9A%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">副业之路</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15px;">博客搭建</a> <a href="/tags/%E6%8B%9B%E8%81%98/" style="font-size: 15px;">招聘</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">计算机基础知识</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95/" style="font-size: 10px;">计算机等级考试</a> <a href="/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 10px;">面经</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
+						<a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/%E5%89%AF%E4%B8%9A%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">副业之路</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15px;">博客搭建</a> <a href="/tags/%E6%8B%9B%E8%81%98/" style="font-size: 15px;">招聘</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">计算机基础知识</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95/" style="font-size: 10px;">计算机等级考试</a> <a href="/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 15px;">面经</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
 					</div>
 				</section>
 				
@@ -160,7 +160,7 @@
   
     <div class="article-meta">
       <a href="/2022/02/25/%E9%9D%A2%E7%BB%8F/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" class="article-date">
-  	<time datetime="2022-02-25T01:56:38.027Z" itemprop="datePublished">2022-02-25</time>
+  	<time datetime="2022-02-25T02:00:39.000Z" itemprop="datePublished">2022-02-25</time>
 </a>
     </div>
   
@@ -169,10 +169,23 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/25/%E9%9D%A2%E7%BB%8F/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">
+        智能指针
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: 智能指针<br>date: 2022-02-25 08:49:02<br>tags: 面经</p>
-<h3 id="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"><a href="#什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？" class="headerlink" title="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"></a>什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？</h3><p>智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。</p>
+        <h3 id="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"><a href="#什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？" class="headerlink" title="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"></a>什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？</h3><p>智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。</p>
 <p>智能指针的作用是能够处理泄露问题和空悬指针问题。</p>
 <p>分为<code>auto_ptr</code> 、<code>unique_ptr</code> 、<code>shared_ptr</code> 和<code> weak_ptr</code>四种，各自的特点：</p>
 <ul>
@@ -196,6 +209,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a></li></ul>
+	</div>
+
       
 
       
