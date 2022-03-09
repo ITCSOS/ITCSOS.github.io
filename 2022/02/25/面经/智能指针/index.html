@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>智能指针 | 觅知の博客</title>
+  <title>觅知の博客</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。 智能指针的作用是能够处理泄露问题和空悬指针问题。 分为auto_ptr 、unique_ptr 、shared_ptr 和 weak_ptr四种，各自的特点：">
+  <meta name="description" content="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。 智能指针的作用是能够处理泄露问题和空悬指针问题。 分为auto_ptr 、unique_ptr 、shared_ptr 和 weak_ptr四种，各自的特">
 <meta property="og:type" content="article">
-<meta property="og:title" content="智能指针">
+<meta property="og:title" content="觅知の博客">
 <meta property="og:url" content="http://example.com/2022/02/25/%E9%9D%A2%E7%BB%8F/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="觅知の博客">
-<meta property="og:description" content="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。 智能指针的作用是能够处理泄露问题和空悬指针问题。 分为auto_ptr 、unique_ptr 、shared_ptr 和 weak_ptr四种，各自的特点：">
+<meta property="og:description" content="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。 智能指针的作用是能够处理泄露问题和空悬指针问题。 分为auto_ptr 、unique_ptr 、shared_ptr 和 weak_ptr四种，各自的特">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-25T02:00:39.000Z">
-<meta property="article:modified_time" content="2022-02-25T02:01:39.233Z">
+<meta property="article:published_time" content="2022-02-25T01:56:38.027Z">
+<meta property="article:modified_time" content="2022-02-25T02:03:28.159Z">
 <meta property="article:author" content="觅知">
-<meta property="article:tag" content="面经">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="觅知の博客" type="application/atom+xml">
@@ -111,7 +110,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/%E5%89%AF%E4%B8%9A%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">副业之路</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15px;">博客搭建</a> <a href="/tags/%E6%8B%9B%E8%81%98/" style="font-size: 15px;">招聘</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">计算机基础知识</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95/" style="font-size: 10px;">计算机等级考试</a> <a href="/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 15px;">面经</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
+						<a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/%E5%89%AF%E4%B8%9A%E4%B9%8B%E8%B7%AF/" style="font-size: 10px;">副业之路</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15px;">博客搭建</a> <a href="/tags/%E6%8B%9B%E8%81%98/" style="font-size: 15px;">招聘</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95/" style="font-size: 10px;">计算机等级考试</a> <a href="/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 10px;">面经</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
 					</div>
 				</section>
 				
@@ -161,7 +160,7 @@
   
     <div class="article-meta">
       <a href="/2022/02/25/%E9%9D%A2%E7%BB%8F/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" class="article-date">
-  	<time datetime="2022-02-25T02:00:39.000Z" itemprop="datePublished">2022-02-25</time>
+  	<time datetime="2022-02-25T01:56:38.027Z" itemprop="datePublished">2022-02-25</time>
 </a>
     </div>
   
@@ -170,33 +169,11 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      智能指针
-      
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag">面经</a></li></ul>
-	</div>
-
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"><a href="#什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？" class="headerlink" title="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"></a>什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？</h3><p>智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。</p>
+        <hr>
+<hr>
+<h3 id="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"><a href="#什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？" class="headerlink" title="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"></a>什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？</h3><p>智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。</p>
 <p>智能指针的作用是能够处理泄露问题和空悬指针问题。</p>
 <p>分为<code>auto_ptr</code> 、<code>unique_ptr</code> 、<code>shared_ptr</code> 和<code> weak_ptr</code>四种，各自的特点：</p>
 <ul>
@@ -223,8 +200,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2022/02/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">计算机发展简史</div>
+    <a href="/2022/02/22/%E9%9D%A2%E7%BB%8F/c++%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++基础</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -234,7 +211,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="面经/智能指针" data-title="智能指针" data-url="http://example.com/2022/02/25/%E9%9D%A2%E7%BB%8F/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"  data-images="http://scimg.jianbihuadq.com/touxiang/202003/20200326123253119.jpg" data-content="智能指针">
+<div class="ds-share share" data-thread-key="面经/智能指针" data-title="" data-url="http://example.com/2022/02/25/%E9%9D%A2%E7%BB%8F/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"  data-images="http://scimg.jianbihuadq.com/touxiang/202003/20200326123253119.jpg" data-content="">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>

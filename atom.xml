@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-25T02:01:39.233Z</updated>
+  <updated>2022-02-25T02:03:28.159Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,35 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>智能指针</title>
+    <title></title>
     <link href="http://example.com/2022/02/25/%E9%9D%A2%E7%BB%8F/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"/>
     <id>http://example.com/2022/02/25/%E9%9D%A2%E7%BB%8F/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</id>
-    <published>2022-02-25T02:00:39.000Z</published>
-    <updated>2022-02-25T02:01:39.233Z</updated>
+    <published>2022-02-25T01:56:38.027Z</published>
+    <updated>2022-02-25T02:03:28.159Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"><a href="#什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？" class="headerlink" title="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"></a>什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？</h3><p>智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。</p><p>智能指针的作用是能够处理泄露问题和空悬指针问题。</p><p>分为<code>auto_ptr</code> 、<code>unique_ptr</code> 、<code>shared_ptr</code> 和<code> weak_ptr</code>四种，各自的特点：</p><ul><li><p>对于<code>auto_ptr</code>,实现独有式拥有的概念，同一时间只能有一个智能指针可以指向该对象；但<code>auto_ptr</code>在c++11中被抛弃，主要问题在于：</p><ol><li>对象所有权的转移，比如在函数传参过程中，对象所有权不会返还，从而存在潜在的内存崩溃的问题</li><li>不能指向数组，也不能作为STL容器的成员</li></ol></li><li><p>对于<code>unique_ptr</code>,实现独有式拥有的概念，同一时间只能有一个智能指针可以指向该对象；因而无法进行拷贝构造和拷贝赋值，但是可以进行移动构造和移动赋值</p></li><li><p>对于<code>shared_ptr</code>,实现独有式拥有的概念，即多个智能指针可以指向相同的对象，该对象及相关资源会在其所指对象不再使用后，自动释放与对象相关的资源</p></li><li><p>对于<code>weak_ptr</code> ,解决<code>shared_ptr</code>相互引用时，两个指针的引用计数永远不会下降为0，从而导致死锁问题，而<code>weak_ptr</code>是对对象的一种弱引用，可以绑定到<code>shared_ptr</code>,但不会增加对象的引用计数。</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    
-    <category term="面经" scheme="http://example.com/tags/%E9%9D%A2%E7%BB%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机发展简史</title>
-    <link href="http://example.com/2022/02/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/"/>
-    <id>http://example.com/2022/02/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/</id>
-    <published>2022-02-22T09:14:26.000Z</published>
-    <updated>2022-02-22T10:05:23.063Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="计算机发展的四个阶段"><a href="#计算机发展的四个阶段" class="headerlink" title="计算机发展的四个阶段"></a>计算机发展的四个阶段</h3><p>1946-1957    <code>电子管计算机</code></p><p>集成度小，空间占用大，功耗高，运行速度慢，操作复杂，更换程序需要接线</p><p>1957-1964    <code>晶体管计算机</code></p><p>贝尔实验室的三个科学家发明，集成度较高，空间占用相对较小，功耗相对较低，运行速度相对较快，操作相对简单，交互更加方便</p><p>1964-1980    <code> 集成电路计算机</code></p><p>IC的发明，IBM，操作系统的原型</p><p>1980-现在    <code>现代大规模集成电路计算机</code></p><p>一个芯片集成了上百万的晶体管，速度更快，体积更小，价格更低，更能被大众接受，文本处理，表格处理。</p><p>未来：量子计算机</p><h3 id="微型计算机的发展"><a href="#微型计算机的发展" class="headerlink" title="微型计算机的发展"></a>微型计算机的发展</h3><p>单核 CPU  的规格        摩尔定律        多核CPU</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr><hr><h3 id="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"><a href="#什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？" class="headerlink" title="什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？"></a>什么是智能指针？智能指针有什么作用？分为哪几种？各自都有哪些特点？</h3><p>智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为模板类的对象指针，并且能够离开作用域时，调用析构函数，使用delete删除指针所在的内存空间。</p><p>智能指针的作用是能够处理泄露问题和空悬指针问题。</p><p>分为<code>auto_ptr</code> 、<code>unique_ptr</code> 、<code>shared_ptr</code> 和<code> weak_ptr</code>四种，各自的特点：</p><ul><li><p>对于<code>auto_ptr</code>,实现独有式拥有的概念，同一时间只能有一个智能指针可以指向该对象；但<code>auto_ptr</code>在c++11中被抛弃，主要问题在于：</p><ol><li>对象所有权的转移，比如在函数传参过程中，对象所有权不会返还，从而存在潜在的内存崩溃的问题</li><li>不能指向数组，也不能作为STL容器的成员</li></ol></li><li><p>对于<code>unique_ptr</code>,实现独有式拥有的概念，同一时间只能有一个智能指针可以指向该对象；因而无法进行拷贝构造和拷贝赋值，但是可以进行移动构造和移动赋值</p></li><li><p>对于<code>shared_ptr</code>,实现独有式拥有的概念，即多个智能指针可以指向相同的对象，该对象及相关资源会在其所指对象不再使用后，自动释放与对象相关的资源</p></li><li><p>对于<code>weak_ptr</code> ,解决<code>shared_ptr</code>相互引用时，两个指针的引用计数永远不会下降为0，从而导致死锁问题，而<code>weak_ptr</code>是对对象的一种弱引用，可以绑定到<code>shared_ptr</code>,但不会增加对象的引用计数。</p></li></ul>]]></content>
     
     
       
@@ -55,8 +33,6 @@
     
     
     
-    
-    <category term="计算机基础知识" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
@@ -131,9 +107,9 @@
     <link href="http://example.com/2022/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7%E5%A4%87%E8%80%83/"/>
     <id>http://example.com/2022/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7%E5%A4%87%E8%80%83/</id>
     <published>2022-02-21T02:28:06.000Z</published>
-    <updated>2022-02-23T08:00:48.452Z</updated>
+    <updated>2022-02-27T04:11:16.473Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="001"><a href="#001" class="headerlink" title="001"></a>001</h4><p>1.在关系数据库设计中，关系模式是用来记录用户数据的<code>二维表</code>。</p><p>2.宏定义后边不加分号，逗号表达式的范围注意</p><p>3.在if else语句中else总是与离它最近的if配对。</p><p>4.看清楚选择题让选的是正确的还是错误的</p><h4 id="002"><a href="#002" class="headerlink" title="002"></a>002</h4><ol><li><p>计算机完成一条指令所花费的时间称为一个指令周期。</p></li><li><p>顺序结构不具有并发性。</p></li><li><p>为了降低算法的空间复杂度，主要应该减少输入数据所占用的内存空间，通常采用压缩存储技术。</p></li><li><p>栈是先进后出，队是先进先出</p></li><li><p>数的总节点数等于所有节点的度数之和加1</p></li><li><p>结构化程序设计强调的是程序的易读性。</p></li><li><p>数据库管理技术发展的三个阶段是人工管理系统，文件管理系统和数据库管理系统。</p></li><li><p>在实体联系模型中，实体是客观存在并且可以相互区别的事物。</p></li><li><p>c语言中的非执行语句不会被编译</p></li><li><p>c语言中八进制整型常量的开头是0，十六进制开头是0x，c语言中的实型常量必须要有小数点，指数形式以e后跟一个整数来表示以10为底的幂数，且规定e之前必须要有数字，且e后边的指数必须为整数。</p></li><li><p>pow函数按照左右顺序来写</p></li><li><p>取模运算符%，二元运算符，参与运算的都是整数</p></li><li><p>回车也是一个字符，所以它的值为123</p></li><li><p>c语言的逻辑运算符两边没有明确的数据类型，可以是任意合法的表达式</p></li><li><p>编译有错，if语句后边不能连加括号</p></li><li><p>由于内层循环for在后边直接跟了空语句，所以在循环内部什么都不做，只是打印一个*字</p></li><li><p>scanf(“%s”,s)表示输入一个字符串，遇到空格就会结束输入，所以当字符串带空格时，不能使用该语句</p></li><li><p>Auto 和register，在c语言中只有在使用的时候才会占用内存单元</p></li><li><p>结构体变量可以作为函数和返回值，作为函数的实参时，可以实现函数的传值调用，当使用结构体变量作为函数的形参时，实参应该是以实现形参的调用，形参将拷贝的副本传给形参，在被调用函数中改变形参的值对于调用函数中的实参没有影响</p></li><li><p>buffer:用于接收数据的内存地址，大小至少是size*count字节;size:单个元素的大小，单位是字节;count:元素的个数，每个元素是size字节;stream:输入流。</p></li></ol><h3 id="003"><a href="#003" class="headerlink" title="003"></a>003</h3><p>1.弄清入栈出栈的含义，s(1:50)的含义是，它的top的位置是自上往下依次增加，看位置，推个数</p><p>2.关系模式进行规范化的目的就是使关系结构更加合理，消除存储异常，使数据冗杂尽量小，便于插入，删除和更新等操作</p><p>3.关系元的使用，笛卡尔积</p><p>4.c语言中不能表示的数据进制是二进制</p><p>5.运算符的优先级</p><p>6.在输入多个数据时，若格式控制串中无非格式字符，则认为所有输入的字符均为有效字符。所以应按选项D的顺序输入数据。</p><p>7.c语言中没有&lt;&gt;运算符</p><p>8.循环条件的看清，都是double就用lf</p><p>9.格式输入函数，按照用户指定的格式从键盘上把数据输入到指定变量中，最大域宽。</p><p>10.a的ascii码值为97</p><p>11.函数调用时的传参问题，拷贝，不会修改变量的值</p><p>12.宏定义没有数据类型的限制</p><p>13.异或操作</p><p>14.文件操作注意数据的拷贝</p><h3 id="004"><a href="#004" class="headerlink" title="004"></a>004</h3><p>1.一个计算机当中有成千上万个文件，为了方便对文件进行存储和管理，计算机系统建立文件的索引，即文件名和文件物理之间的映射关系，这种文件的索引称为文件目录。</p><p>2.在长度为n的长度有序链表中，最坏的情况下需要比较的次数是n</p><p>3.循环队列当front&#x3D;rear时，此时队列为空</p><p>4.二叉树的遍历，前序遍历，中序遍历</p><p>5.变量还没有定义，就不能直接给变量赋值</p><p>6.使用y–一定是要先用再减</p><p>7.做选择题时先从前往后做15道，然后从后往前做15道</p><p>8.判断行数和列数，乘积要有倍数概念</p><p>9.注意循环条件，出了条件就不再循环</p><p>10.数组注意越界问题</p><p>11.数组名代替数组的首地址，定义数组时为其分配确定的地址</p><p>12.strlen函数计算长度时，不包括  \0    !!!</p><p>13.strcpy:字符串拷贝函数，strlen 求字符串长度函数</p><p>14.acsii码值的变化，注意整型可以被转换为字符型</p><p>15.被static修饰的变量为静态局部变量，占用固定的内存单元，下次被调用时就可以保留上次调用的值</p><p>16.getchar函数是从终端读入字符，不是从磁盘文件中读入字符。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="001"><a href="#001" class="headerlink" title="001"></a>001</h4><p>1.在关系数据库设计中，关系模式是用来记录用户数据的<code>二维表</code>。</p><p>2.宏定义后边不加分号，逗号表达式的范围注意</p><p>3.在if else语句中else总是与离它最近的if配对。</p><p>4.看清楚选择题让选的是正确的还是错误的</p><h4 id="002"><a href="#002" class="headerlink" title="002"></a>002</h4><ol><li><p>计算机完成一条指令所花费的时间称为一个指令周期。</p></li><li><p>顺序结构不具有并发性。</p></li><li><p>为了降低算法的空间复杂度，主要应该减少输入数据所占用的内存空间，通常采用压缩存储技术。</p></li><li><p>栈是先进后出，队是先进先出</p></li><li><p>数的总节点数等于所有节点的度数之和加1</p></li><li><p>结构化程序设计强调的是程序的易读性。</p></li><li><p>数据库管理技术发展的三个阶段是人工管理系统，文件管理系统和数据库管理系统。</p></li><li><p>在实体联系模型中，实体是客观存在并且可以相互区别的事物。</p></li><li><p>c语言中的非执行语句不会被编译</p></li><li><p>c语言中八进制整型常量的开头是0，十六进制开头是0x，c语言中的实型常量必须要有小数点，指数形式以e后跟一个整数来表示以10为底的幂数，且规定e之前必须要有数字，且e后边的指数必须为整数。</p></li><li><p>pow函数按照左右顺序来写</p></li><li><p>取模运算符%，二元运算符，参与运算的都是整数</p></li><li><p>回车也是一个字符，所以它的值为123</p></li><li><p>c语言的逻辑运算符两边没有明确的数据类型，可以是任意合法的表达式</p></li><li><p>编译有错，if语句后边不能连加括号</p></li><li><p>由于内层循环for在后边直接跟了空语句，所以在循环内部什么都不做，只是打印一个*字</p></li><li><p>scanf(“%s”,s)表示输入一个字符串，遇到空格就会结束输入，所以当字符串带空格时，不能使用该语句</p></li><li><p>Auto 和register，在c语言中只有在使用的时候才会占用内存单元</p></li><li><p>结构体变量可以作为函数和返回值，作为函数的实参时，可以实现函数的传值调用，当使用结构体变量作为函数的形参时，实参应该是以实现形参的调用，形参将拷贝的副本传给形参，在被调用函数中改变形参的值对于调用函数中的实参没有影响</p></li><li><p>buffer:用于接收数据的内存地址，大小至少是size*count字节;size:单个元素的大小，单位是字节;count:元素的个数，每个元素是size字节;stream:输入流。</p></li></ol><h3 id="003"><a href="#003" class="headerlink" title="003"></a>003</h3><p>1.弄清入栈出栈的含义，s(1:50)的含义是，它的top的位置是自上往下依次增加，看位置，推个数</p><p>2.关系模式进行规范化的目的就是使关系结构更加合理，消除存储异常，使数据冗杂尽量小，便于插入，删除和更新等操作</p><p>3.关系元的使用，笛卡尔积</p><p>4.c语言中不能表示的数据进制是二进制</p><p>5.运算符的优先级</p><p>6.在输入多个数据时，若格式控制串中无非格式字符，则认为所有输入的字符均为有效字符。所以应按选项D的顺序输入数据。</p><p>7.c语言中没有&lt;&gt;运算符</p><p>8.循环条件的看清，都是double就用lf</p><p>9.格式输入函数，按照用户指定的格式从键盘上把数据输入到指定变量中，最大域宽。</p><p>10.a的ascii码值为97</p><p>11.函数调用时的传参问题，拷贝，不会修改变量的值</p><p>12.宏定义没有数据类型的限制</p><p>13.异或操作</p><p>14.文件操作注意数据的拷贝</p><h3 id="004"><a href="#004" class="headerlink" title="004"></a>004</h3><p>1.一个计算机当中有成千上万个文件，为了方便对文件进行存储和管理，计算机系统建立文件的索引，即文件名和文件物理之间的映射关系，这种文件的索引称为文件目录。</p><p>2.在长度为n的长度有序链表中，最坏的情况下需要比较的次数是n</p><p>3.循环队列当front&#x3D;rear时，此时队列为空</p><p>4.二叉树的遍历，前序遍历，中序遍历</p><p>5.变量还没有定义，就不能直接给变量赋值</p><p>6.使用y–一定是要先用再减</p><p>7.做选择题时先从前往后做15道，然后从后往前做15道</p><p>8.判断行数和列数，乘积要有倍数概念</p><p>9.注意循环条件，出了条件就不再循环</p><p>10.数组注意越界问题</p><p>11.数组名代替数组的首地址，定义数组时为其分配确定的地址</p><p>12.strlen函数计算长度时，不包括  \0    !!!</p><p>13.strcpy:字符串拷贝函数，strlen 求字符串长度函数</p><p>14.acsii码值的变化，注意整型可以被转换为字符型</p><p>15.被static修饰的变量为静态局部变量，占用固定的内存单元，下次被调用时就可以保留上次调用的值</p><p>16.getchar函数是从终端读入字符，不是从磁盘文件中读入字符。</p><h3 id="005"><a href="#005" class="headerlink" title="005"></a>005</h3><p>1.I&#x2F;O方式中使得计算机并行程度最高的是通道</p><p>2.计算机中的缓冲技术用于提高主机和设备交换信息的速度</p><p>3.对于长度为n的顺序表进行快速排序，最坏的情况需要比较的次数是n(n-1)&#x2F;2</p><p>4.对于任意一颗二叉树，度为0的节点总是比度为2的节点多一个</p><p>5.黑核测试又称功能测试或者数据驱动测试，着重测试软件功能，黑盒测试的是软件的功能。</p><p>6.最著名的概念模型有实体-联系模型和面向对象模型</p><p>7.实体之间的关系</p><h3 id="006"><a href="#006" class="headerlink" title="006"></a>006</h3><p>1.总线带宽是指总线的数据传输速率</p><p>2.在快速排序中，数据每交换一次或者移动后，能够消除多个排序</p><p>3.带链的栈具有栈的属性的链表，线性链表的存储单元是不连续的，因为是不连续的存储空间，所以指针不会有规律的变化</p><p>4.结构图是描述软件系统功能的</p><p>5.概念设计最实用的方法就是实体+-联系方法，简称E R模型</p><p>6.算法的有穷性，算法正确的程序不能有零个输出</p><p>7.常量不能赋值给常量</p><p>8.看清题目要求，输出多少个字符去换行。</p><p>9.大写转小写</p><p>10.值的对应</p><h2 id="006-1"><a href="#006-1" class="headerlink" title="006"></a>006</h2><p>1.对于任何一颗二叉树，度为0的节点总是比度为2的节点多一个</p><p>2.将实体联系模型转换成关系模型时，实体之间多对多的联系在关系模型中的实现方式是建立新的关系</p><p>3.若只处理真假两种逻辑值，应该使用逻辑类型</p><p>4.printf函数中格式字符“%8.+”的含义是：变量y的输出宽度为8，小数点后边保留6位小数且右对齐</p><p>5.统计字符串s的长度，使用递归</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">aaa</span><span class="params">(<span class="type">char</span> *s)</span>&#123;</span><br><span class="line">    <span class="type">char</span> *t;</span><br><span class="line">    <span class="keyword">while</span>(*t++);</span><br><span class="line">    t--;</span><br><span class="line">    <span class="keyword">return</span> (t-s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>6.结构体变量的相关操作以及传值传址的区别</p><p>7.w的方式是打开文件，只能写不能读。</p>]]></content>
     
     
       
